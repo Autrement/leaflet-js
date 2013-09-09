@@ -1,5 +1,12 @@
 = leaflet-js Changelog
 
+=== 0.6.4 (September 9, 2013)
+* Upadte to latest version of leafle (0.6.4)
+* Do not use submodules anymore
+* Fix images paths in both css and js files
+* Drop leaflet-labels and leafle-draws plugins,
+  which are plugins and not in core lib
+
 === 0.6.beta4 (May 2, 2013)
 * Unix is case senstive!
 
@@ -19,7 +26,7 @@
 === 0.3.beta4 (February 3, 2012)
 * Copy images to vendor/assets/images so they are precompiled correctly.
 * Copy stylesheets to vendor/assets/stylesheets and then update.
-* Modify stylesheets to use asset_path for background images so that 
+* Modify stylesheets to use asset_path for background images so that
   precompiling works correctly.
 
 === 0.3.beta3 (January 17, 2012)
