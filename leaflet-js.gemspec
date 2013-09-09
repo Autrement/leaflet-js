@@ -18,8 +18,6 @@ EOS
                          'README.rdoc',
                          'lib/leaflet-js.rb',
                          'lib/leaflet/**/*',
-                         'lib/leaflet.draw/**/*',
-                         'lib/leaflet.label/**/*',
                          'vendor/assets/images/*',
                          'vendor/assets/stylesheets/*',
                          'vendor/assets/javascripts/*'])
