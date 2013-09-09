@@ -3034,7 +3034,7 @@ L.TileLayer.Canvas = L.TileLayer.extend({
 			this._reset({hard: true});
 			this._update();
 		}
-		
+
 		for (var i in this._tiles) {
 			this._redrawTile(this._tiles[i]);
 		}
@@ -3349,35 +3349,18 @@ L.Icon.Default = L.Icon.extend({
 		}
 
 		if (L.Browser.retina && name === 'icon') {
-			name += '-2x';
-		}
+      return "<%= asset_path('marker-icon-2x.png') %>";
+    }
 
-		var path = L.Icon.Default.imagePath;
+		if (name === 'shadow') {
+      return "<%= asset_path('marker-shadow.png') %>";
+    } else if (name === 'icon') {
+      return "<%= asset_path('marker-icon.png') %>";
+    }
 
-		if (!path) {
-			throw new Error('Couldn\'t autodetect L.Icon.Default.imagePath, set it manually.');
-		}
-
-		return path + '/marker-' + name + '.png';
+    throw new Error("Icon url of type '" + name + "' not yet implemented");
 	}
 });
-
-L.Icon.Default.imagePath = (function () {
-	var scripts = document.getElementsByTagName('script'),
-	    leafletRe = /[\/^]leaflet[\-\._]?([\w\-\._]*)\.js\??/;
-
-	var i, len, src, matches, path;
-
-	for (i = 0, len = scripts.length; i < len; i++) {
-		src = scripts[i].src;
-		matches = src.match(leafletRe);
-
-		if (matches) {
-			path = src.split(leafletRe)[0];
-			return (path ? path + '/' : '') + 'images';
-		}
-	}
-}());
 
 
 /*
@@ -3665,7 +3648,7 @@ L.Marker = L.Class.extend({
 		if (this._map) {
 			this._updateOpacity();
 		}
-		
+
 		return this;
 	},
 
